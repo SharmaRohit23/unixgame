@@ -1,0 +1,154 @@
+/* =========================================================
+   GameMonetize color layer only
+   Safe version: colors, borders, hover only
+   ========================================================= */
+
+:root {
+    --gm-purple: #7b00ff;
+    --gm-purple-dark: #36005f;
+    --gm-pink: #ff2b9f;
+    --gm-blue: #1e77c7;
+    --gm-cyan: #16c8df;
+    --gm-dark: #07051f;
+    --gm-panel: rgba(8, 16, 48, 0.58);
+}
+
+/* Main background only */
+html,
+body {
+    background:
+        radial-gradient(circle at 18% 18%, rgba(158, 0, 255, 0.58) 0%, transparent 34%),
+        radial-gradient(circle at 82% 10%, rgba(22, 203, 225, 0.58) 0%, transparent 36%),
+        linear-gradient(125deg, #7b00b8 0%, #5b16b8 38%, #1e77c7 70%, #12d4d8 100%) !important;
+    color: #ffffff !important;
+}
+
+/* Header color only */
+#header,
+#header > div {
+    background: linear-gradient(90deg, rgba(119, 0, 184, 0.92) 0%, rgba(78, 35, 177, 0.92) 45%, rgba(18, 180, 216, 0.92) 100%) !important;
+    border-bottom-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+/* Sidebar color only */
+#sidebar-menu,
+#sidebar-menu > div:first-child {
+    background: linear-gradient(180deg, #3a0674 0%, #07142d 100%) !important;
+    border-right-color: rgba(142, 231, 255, 0.24) !important;
+}
+
+/* Common dark panels only */
+.bg-\[\#1F1F30\],
+.bg-\[\#1f1f30\],
+.bg-\[\#1a1b28\],
+.bg-\[\#1A1B28\],
+.bg-\[\#212233\],
+.bg-\[\#181925\],
+.bg-\[\#0C0D14\],
+.bg-\[\#0c0d14\] {
+    background-color: var(--gm-panel) !important;
+    border-color: rgba(142, 231, 255, 0.20) !important;
+}
+
+/* Main buttons color only */
+button,
+.btn,
+.button,
+a.btn,
+.gamePlay-button,
+.mobi-gamePlay-button,
+.play-now-button,
+.detail-infobox-btn,
+.mobi-desc-play a,
+.mobi-desc-more a,
+.mobi-desc-walkbtn a {
+    background: linear-gradient(180deg, var(--gm-pink) 0%, var(--gm-purple) 100%) !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.50) !important;
+}
+
+/* Main buttons hover only */
+button:hover,
+.btn:hover,
+.button:hover,
+a.btn:hover,
+.gamePlay-button:hover,
+.mobi-gamePlay-button:hover,
+.play-now-button:hover,
+.detail-infobox-btn:hover,
+.mobi-desc-play a:hover,
+.mobi-desc-more a:hover,
+.mobi-desc-walkbtn a:hover {
+    background: linear-gradient(180deg, var(--gm-cyan) 0%, var(--gm-purple) 100%) !important;
+    color: #ffffff !important;
+}
+
+/* Tag/category buttons color only */
+a[href*="/tag/"].bg-\[\#212233\],
+a[href*="/category/"].bg-\[\#212233\],
+.game-tags-grid a.bg-\[\#212233\],
+.game-tags ul li a,
+.game-dec .tags a {
+    background: rgba(255, 43, 159, 0.16) !important;
+    border-color: rgba(142, 231, 255, 0.30) !important;
+    color: #ffffff !important;
+}
+
+/* Tag/category buttons hover only */
+a[href*="/tag/"].bg-\[\#212233\]:hover,
+a[href*="/category/"].bg-\[\#212233\]:hover,
+.game-tags-grid a.bg-\[\#212233\]:hover,
+.game-tags ul li a:hover,
+.game-dec .tags a:hover {
+    background: rgba(22, 200, 223, 0.28) !important;
+    border-color: rgba(142, 231, 255, 0.60) !important;
+    color: #ffffff !important;
+}
+
+/* Links */
+main a,
+footer a {
+    color: #8ee7ff !important;
+}
+
+main a:hover,
+footer a:hover {
+    color: #ffffff !important;
+}
+
+/* Search colors only */
+#header input[type="text"],
+#header input[type="search"] {
+    color: #ffffff !important;
+}
+
+#header input[type="text"]::placeholder,
+#header input[type="search"]::placeholder {
+    color: rgba(235, 244, 255, 0.72) !important;
+}
+
+/* === AUTO TAG CARD BASE START === */
+/* generated: 1779569764 */
+body .tag-page-card {
+    background: transparent !important;
+}
+body .tag-page-card.has-tag-image {
+    background: transparent !important;
+}
+body .tag-page-card.has-tag-image::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+    background-image: url("/static/tag-card-base-purple.webp?v=1779569764") !important;
+    background-size: 100% 100% !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+body .tag-page-card.has-tag-image::after {
+    content: none !important;
+    display: none !important;
+}
+/* === AUTO TAG CARD BASE END === */

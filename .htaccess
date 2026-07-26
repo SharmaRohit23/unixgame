@@ -1,0 +1,108 @@
+# CMS UPDATE BLOCK START - update must be in this 2 like example above and with - like = cms-update-routes
+
+# CMS UPDATE BLOCK START: cms-redirect-from-to-www
+#RewriteEngine On
+#RewriteCond %{HTTP_HOST} !^www\. [NC]
+#RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/ [R=301,L]
+# CMS UPDATE BLOCK END: cms-redirect-from-to-www
+
+
+ 
+
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^home(|/)$ index.php?p=home
+RewriteRule ^feed(|/)$ feed.php
+RewriteRule ^new-games(|/)$ index.php?p=new-games
+RewriteRule ^best-games(|/)$ index.php?p=best-games
+RewriteRule ^random(|/)$ index.php?p=random
+RewriteRule ^about(|/)$ index.php?p=about
+RewriteRule ^tags(|/)$ index.php?p=tags
+RewriteRule ^privacy(|/)$ index.php?p=privacy
+RewriteRule ^terms(|/)$ index.php?p=terms
+RewriteRule ^contact(|/)$ index.php?p=contact
+RewriteRule ^featured-games(|/)$ index.php?p=featured-games
+RewriteRule ^played-games(|/)$ index.php?p=played-games
+RewriteRule ^new-games(|/)$ index.php?p=new-games
+RewriteRule ^categories(|/)$ index.php?p=categories
+RewriteRule ^blogs(|/)$ index.php?p=blogs
+RewriteRule ^login(|/)$ index.php?p=login
+RewriteRule ^setting(|/)$ index.php?p=setting&section=info
+RewriteRule ^setting/avatar(|/)$ index.php?p=setting&section=avatar
+RewriteRule ^setting/password(|/)$ index.php?p=setting&section=password
+RewriteRule ^logout/(.*)$ index.php?p=logout&token=$1
+RewriteRule ^error(|/)$ index.php?p=error
+RewriteRule ^admin(|/)$ index.php?p=admin&section=global
+RewriteRule ^admin/addgame(|/)$ index.php?p=admin&section=addgame
+RewriteRule ^admin/setting(|/)$ index.php?p=admin&section=setting
+
+RewriteRule ^([A-Za-z0-9-.]+)-games$                	index.php?cat=$1	[L]
+
+RewriteRule ^admin/games(|/)$ index.php?p=admin&section=games
+RewriteRule ^admin/games/edit/(.*)$ index.php?p=admin&section=games&action=edit&gid=$1
+RewriteRule ^admin/games/(.*)$ index.php?p=admin&section=games&page=$1
+
+RewriteRule ^admin/games-images-and-videos(|/)$ index.php?p=admin&section=games-images-and-videos
+
+RewriteRule ^admin/categories(|/)$ index.php?p=admin&section=categories
+RewriteRule ^admin/categories/add(|/)$ index.php?p=admin&section=categories&action=add
+RewriteRule ^admin/blogs(|/)$ index.php?p=admin&section=blogs
+RewriteRule ^admin/blogs/add(|/)$ index.php?p=admin&section=blogs&action=add
+RewriteRule ^admin/tags(|/)$ index.php?p=admin&section=tags
+RewriteRule ^admin/tags/add(|/)$ index.php?p=admin&section=tags&action=add
+RewriteRule ^admin/footerdescription(|/)$ index.php?p=admin&section=footerdescription
+RewriteRule ^admin/users(|/)$ index.php?p=admin&section=users
+RewriteRule ^admin/ads(|/)$ index.php?p=admin&section=ads
+RewriteRule ^admin/chatgpt(|/)$ index.php?p=admin&section=chatgpt
+RewriteRule ^admin/links(|/)$ index.php?p=admin&section=links
+RewriteRule ^admin/sliders(|/)$ index.php?p=admin&section=sliders
+RewriteRule ^admin/sliders/add(|/)$ index.php?p=admin&section=sliders&action=add
+RewriteRule ^admin/sidebar(|/)$ index.php?p=admin&section=sidebar
+RewriteRule ^admin/sidebar/add(|/)$ index.php?p=admin&section=sidebar&action=add
+RewriteRule ^admin/adstxt(|/)$ index.php?p=admin&section=adstxt
+RewriteRule ^login/url/(.*)$ index.php?p=login&redirect_url=$1
+RewriteRule ^category/(.*)$ index.php?p=categories&category=$1
+RewriteRule ^blog/(.*)$ index.php?p=blogs&blog=$1
+
+ 
+ RewriteRule ^admin/report(|/)$ index.php?p=admin&section=report
+ 
+RewriteRule ^tag/(.*)$ index.php?p=tagspage&tag=$1
+RewriteRule ^home/(.*)$ index.php?lang=$1
+RewriteRule ^profile/(.*)$ index.php?p=profile&id=$1
+RewriteRule ^game/(.*)$ index.php?p=play&id=$1
+RewriteRule ^search/(.*)$ index.php?p=search&q=$1
+RewriteRule ^search-handler/(.*)$ index.php?p=search-handler&q=$1
+RewriteRule ^admin/users/edit/(.*)$ index.php?p=admin&section=users&action=edit&uid=$1
+RewriteRule ^admin/categories/edit/(.*)$ index.php?p=admin&section=categories&action=edit&cid=$1
+RewriteRule ^admin/blogs/edit/(.*)$ index.php?p=admin&section=blogs&action=edit&cid=$1
+RewriteRule ^admin/tags/edit/(.*)$ index.php?p=admin&section=tags&action=edit&cid=$1
+RewriteRule ^admin/sliders/edit/(.*)$ index.php?p=admin&section=sliders&action=edit&cid=$1
+RewriteRule ^admin/sidebar/edit/(.*)$ index.php?p=admin&section=sidebar&action=edit&cid=$1
+RewriteRule ^admin/footerdescription/edit/(.*)$ index.php?p=admin&section=footerdescription&action=edit&cid=$1
+RewriteRule ^admin/gameDescriptionDownload$ index.php?p=admin&section=gamedescription&action=download
+
+RewriteRule ^links/EqbVgvc167Hp3AFUfP2tGNhyYMerSmxW0wDkjZn9$ index.php?p=public
+
+## API
+RewriteRule ^api/v1/sandbox/game/(.*)$ gm-api.php?l=game-sandbox&gid=$1
+
+ErrorDocument 404 /index.php?p=error
+
+</IfModule>
+
+Options -Indexes
+IndexIgnore *
+
+RewriteRule ^links_old_games/xPYr4tF5BvdNayKD2LmqpEoUgG0sRHTjZOhnfSzC$ index.php?p=public
+RewriteRule ^links_tags/AkPiERtDJhz7bHZyvLnSX6uT3Ig0sped5F8Of4NY$ index.php?p=public
+RewriteRule ^links_footer/rcNOEYhtSIP9e8A0nvuZVTaogx6mpDCqiwB7XQ4R$ index.php?p=public
+RewriteRule ^links_categories/Wa0vUsqlVg6pjAx3Nmwi9OnX4QIdRJ7KHrSDPGZ2$ index.php?p=public
+RewriteRule ^links_blogs/0YtOPCJ62MisjkQfvZIE1DzcAWVSLhrnTF78Ndau$ index.php?p=public
+RewriteRule ^links_old_blogs/PW7B4Y91yTn0AvDcQJlb2MVehdoELGqmwstSZxp6$ index.php?p=public
+RewriteRule ^links_blogs_tags/rwx1lvnC3KQBdbNt65T7hJi8qu49HeAFDZRPaMUp$ index.php?p=public

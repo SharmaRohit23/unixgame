@@ -1,0 +1,12 @@
+{
+    "autopost_old_games": {
+        "status": "success",
+        "message": "Total rewritten: 1. Current ID: 2",
+        "time": "2026-06-10 12:46:01"
+    },
+    "autopost": {
+        "status": "error",
+        "message": "Game was not inserted because CMS AI rewrite failed. Reason: AI is busy. Try again later.",
+        "time": "2026-06-12 10:26:03"
+    }
+}

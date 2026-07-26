@@ -1,0 +1,699 @@
+/* =========================================================
+   THEME TITLE: Kizi Blue Arcade
+   WEBSITE: Kizi Games / CrazyGames-like
+   PURPOSE: Custom theme colors loaded after all.css
+   ========================================================= */
+
+/* Main background */
+html,
+body {
+    min-height: 100%;
+    background: #071A33 !important;
+    background:
+        radial-gradient(circle at center top, rgba(45, 171, 255, 0.34) 0%, rgba(9, 39, 76, 0.98) 44%, #030914 100%) !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+    overflow-x: hidden;
+    color: #ffffff !important;
+}
+
+/* Remove old diamond background */
+.bg-diamonds {
+    display: none !important;
+    background: none !important;
+    animation: none !important;
+}
+
+/* Keep layout above background */
+main,
+#header,
+.sidebar,
+.wrapper,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+#header,
+#header > div {
+    background: linear-gradient(180deg, #0E3A70 0%, #08284F 100%) !important;
+    border-bottom: 1px solid rgba(72, 198, 255, 0.30) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.30) !important;
+}
+
+/* Sidebar */
+#sidebar-menu {
+    background: linear-gradient(180deg, #0B315F 0%, #061E3D 100%) !important;
+    border-right: 1px solid rgba(72, 198, 255, 0.24) !important;
+    box-shadow: 8px 0 22px rgba(0, 0, 0, 0.26) !important;
+}
+
+#sidebar {
+    background: transparent !important;
+}
+
+#sidebar-menu > div:first-child {
+    background: linear-gradient(180deg, #0B315F 0%, #061E3D 100%) !important;
+}
+
+@media (min-width: 1024px) {
+    #sidebar-menu::after {
+        background: rgba(72, 198, 255, 0.26) !important;
+    }
+}
+
+/* Clean header search */
+#header .relative.bg-\[\#373952\],
+#header div[class*="bg-[#373952]"] {
+    background: rgba(5, 34, 70, 0.72) !important;
+    border: 1px solid rgba(72, 198, 255, 0.36) !important;
+    border-radius: 999px !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 8px 22px rgba(0, 0, 0, 0.22),
+        0 0 18px rgba(72, 198, 255, 0.12) !important;
+    overflow: hidden !important;
+}
+
+/* Input itself */
+#header input[type="text"],
+#header input[type="search"],
+#header .search-form .txt {
+    background: transparent !important;
+    border: 0 !important;
+    outline: none !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    font-size: 16px !important;
+    padding-left: 14px !important;
+}
+
+/* Placeholder */
+#header input[type="text"]::placeholder,
+#header input[type="search"]::placeholder,
+#header .search-form .txt::placeholder {
+    color: rgba(216, 244, 255, 0.72) !important;
+}
+
+/* Search icon */
+#header .fa-search,
+#header i.fa-search {
+    color: #8ee7ff !important;
+    text-shadow: 0 0 10px rgba(72, 198, 255, 0.35) !important;
+}
+
+/* Focus effect */
+#header .relative.bg-\[\#373952\]:focus-within,
+#header div[class*="bg-[#373952]"]:focus-within {
+    background: rgba(7, 48, 96, 0.88) !important;
+    border-color: rgba(142, 231, 255, 0.82) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.10),
+        0 8px 24px rgba(0, 0, 0, 0.26),
+        0 0 22px rgba(72, 198, 255, 0.28) !important;
+}
+
+/* Sidebar links */
+#sidebar-menu a {
+    color: #ffffff !important;
+}
+
+#sidebar-menu a:hover {
+    background: rgba(72, 198, 255, 0.16) !important;
+    border-radius: 14px !important;
+}
+
+#sidebar-menu a img,
+#sidebar-menu svg {
+    filter: drop-shadow(0 0 6px rgba(72, 198, 255, 0.34));
+}
+
+/* Common dark panels */
+main .bg-\[\#1F1F30\],
+main .bg-\[\#1f1f30\],
+main .bg-\[\#1a1b28\],
+main .bg-\[\#1A1B28\],
+main .bg-\[\#212233\],
+main .bg-\[\#181925\],
+main .bg-\[\#0C0D14\],
+main .bg-\[\#0c0d14\],
+main .border-\[\#28293D\] {
+    background: rgba(8, 40, 79, 0.54) !important;
+    border-color: rgba(72, 198, 255, 0.22) !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.24) !important;
+    color: #ffffff !important;
+}
+
+/* Text/footer/content blocks */
+.footer-description,
+.bottomtext,
+.play-game-desc,
+.category-section-top,
+#special-page-header-desc {
+    background: rgba(8, 40, 79, 0.50) !important;
+    border-radius: 18px !important;
+    border: 1px solid rgba(72, 198, 255, 0.18) !important;
+    color: #ffffff !important;
+}
+
+/* Game page wrappers */
+#game-containers,
+#game-containers .bgs,
+.game-info,
+.page-col,
+#Gameinner,
+#detail-infobox,
+#flex-howtoplay,
+.howtoplay-init,
+.play-game-bottom,
+#mobi-desc-container,
+.mobi-desc-content,
+#mobi-desc-gamelist,
+.game-tags {
+    background: rgba(8, 40, 79, 0.50) !important;
+    border-color: rgba(72, 198, 255, 0.22) !important;
+    color: #ffffff !important;
+}
+
+#ava-game_container,
+#mobi-play-game,
+#mobi-game-preloading,
+#game-preloader,
+#game-preloading {
+    background-color: #071A33 !important;
+}
+
+/* Game player bottom bar */
+#gameDiv .bg-\[\#212233\] {
+    background: rgba(11, 49, 95, 0.90) !important;
+    border: 1px solid rgba(72, 198, 255, 0.24) !important;
+}
+
+/* Game details card */
+.play-game-page-container .bg-\[\#1a1b28\],
+.play-game-page-container .bg-\[\#1A1B28\] {
+    background: rgba(8, 40, 79, 0.58) !important;
+    border: 1px solid rgba(72, 198, 255, 0.20) !important;
+}
+
+/* Old play.css boxes */
+#detail-top-gamebox,
+.intro-ads,
+.pro-play_970x90,
+.pro-info_336x280_1,
+.pro-info_300x600,
+.howtoplay-side-as,
+#flex-howtoplay h2 {
+    background: rgba(11, 49, 95, 0.90) !important;
+    border: 1px solid rgba(72, 198, 255, 0.24) !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24) !important;
+    color: #ffffff !important;
+}
+
+/* Tags */
+.game-tags-grid a.bg-\[\#212233\],
+.game-tags ul li a,
+.game-dec .tags a {
+    background: rgba(72, 198, 255, 0.13) !important;
+    border: 1px solid rgba(72, 198, 255, 0.28) !important;
+    color: #ffffff !important;
+}
+
+.game-tags-grid a.bg-\[\#212233\]:hover,
+.game-tags ul li a:hover,
+.game-dec .tags a:hover {
+    background: rgba(72, 198, 255, 0.28) !important;
+    border-color: rgba(20, 155, 255, 0.48) !important;
+    color: #ffffff !important;
+}
+
+/* Game text */
+.relategames,
+.relategames li a,
+.detail-infobox-detail,
+.detail-infobox-detail h1,
+.detail-infobox-detail h2,
+.detail-infobox-detail p,
+.play-game-bottom p,
+.game-dec,
+.game-dec .description,
+.flex-side-desc,
+.flex-side-desc .pl,
+footer,
+footer a,
+main,
+main a,
+main p,
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+    color: #ffffff !important;
+}
+
+/* Game thumbnails */
+.relategames li img,
+.common-game-style li a .gameicon,
+.common-game-style li a img {
+    border-color: rgba(72, 198, 255, 0.34) !important;
+    background: rgba(8, 40, 79, 0.52) !important;
+}
+
+.relategames li a:hover img,
+.common-game-style li a:hover .gameicon,
+.common-game-style li a:hover img {
+    border-color: #48C6FF !important;
+}
+
+/* Buttons */
+.detail-infobox-btn,
+.mobi-desc-play a,
+.mobi-desc-more a,
+.mobi-desc-walkbtn a,
+.gamePlay-button,
+.mobi-gamePlay-button,
+.play-now-button {
+    background: linear-gradient(180deg, #48C6FF 0%, #149BFF 100%) !important;
+    border-color: rgba(255,255,255,0.76) !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 22px rgba(45, 171, 255, 0.32) !important;
+    font-weight: 700 !important;
+}
+
+.detail-infobox-btn:hover,
+.mobi-desc-play a:hover,
+.mobi-desc-more a:hover,
+.mobi-desc-walkbtn a:hover,
+.gamePlay-button:hover,
+.mobi-gamePlay-button:hover,
+.play-now-button:hover {
+    background: linear-gradient(180deg, #78D7FF 0%, #2DABFF 100%) !important;
+    color: #ffffff !important;
+}
+
+/* Fix homepage top spacing */
+body:not(.game-page) main,
+body:not(.game-page) main > div,
+#top-section,
+#home-top-section,
+.recently-played,
+.recently-played-section,
+.home-recently-played {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    min-height: 0 !important;
+}
+
+/* Remove sidebar top close/header block on desktop */
+@media (min-width: 1024px) {
+    #sidebar-menu > div:first-child {
+        display: none !important;
+    }
+
+    #sidebar {
+        padding-top: 12px !important;
+    }
+}
+
+
+/* Fix top spacing on all pages */
+.play-game-page-container,
+main,
+main > div,
+.wrapper,
+.page-container,
+.content-container {
+    padding-top: 20px !important;
+}
+
+/* Remove extra first section top padding */
+.play-game-page-container > .flex.flex-col,
+main > div:first-child,
+.wrapper > div:first-child,
+.page-container > div:first-child,
+.content-container > div:first-child {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Remove big top space on all pages */
+main,
+main > div,
+.wrapper,
+.page-container,
+.content-container,
+[class*="pt-20"],
+[class*="pt-16"],
+[class*="pt-14"],
+[class*="pt-12"],
+[class*="mt-20"],
+[class*="mt-16"],
+[class*="mt-14"],
+[class*="mt-12"] {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+
+
+
+/* Blue style for game category/tag buttons */
+.play-game-page-container .flex.flex-wrap.gap-4 > a,
+.play-game-page-container .flex.flex-wrap.gap-3 > a {
+    background: linear-gradient(180deg, #256fcf 0%, #0b3f86 100%) !important;
+    border: 1px solid rgba(72, 198, 255, 0.45) !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 16px rgba(45, 171, 255, 0.22) !important;
+}
+
+.play-game-page-container .flex.flex-wrap.gap-4 > a span,
+.play-game-page-container .flex.flex-wrap.gap-3 > a span {
+    color: #8ee7ff !important;
+    opacity: 1 !important;
+}
+
+.play-game-page-container .flex.flex-wrap.gap-4 > a:hover,
+.play-game-page-container .flex.flex-wrap.gap-3 > a:hover {
+    background: linear-gradient(180deg, #48c6ff 0%, #149bff 100%) !important;
+    border-color: rgba(142, 231, 255, 0.90) !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 22px rgba(72, 198, 255, 0.35) !important;
+}
+
+
+/* Blue style for tag buttons in content, not sidebar */
+body a[href*="/tag/"].bg-\[\#212233\],
+body a[href*="/category/"].bg-\[\#212233\] {
+    background: linear-gradient(180deg, #256fcf 0%, #0b3f86 100%) !important;
+    border: 1px solid rgba(72, 198, 255, 0.45) !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 16px rgba(45, 171, 255, 0.22) !important;
+}
+
+body a[href*="/tag/"].bg-\[\#212233\] span,
+body a[href*="/category/"].bg-\[\#212233\] span {
+    color: #8ee7ff !important;
+    opacity: 1 !important;
+}
+
+body a[href*="/tag/"].bg-\[\#212233\]:hover,
+body a[href*="/category/"].bg-\[\#212233\]:hover {
+    background: linear-gradient(180deg, #48c6ff 0%, #149bff 100%) !important;
+    border-color: rgba(142, 231, 255, 0.90) !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 22px rgba(72, 198, 255, 0.35) !important;
+}
+
+/* Restore sidebar menu links */
+#sidebar-menu a[href*="/tag/"],
+#sidebar-menu a[href*="/category/"] {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+#sidebar-menu a[href*="/tag/"]:hover,
+#sidebar-menu a[href*="/category/"]:hover {
+    background: rgba(72, 198, 255, 0.16) !important;
+    border-radius: 14px !important;
+}
+
+
+
+
+/* =========================================================
+   BLOG STYLE FIX
+   Pages: /blogs and single /blog/*
+   Style: blue arcade, clean panels, images visible
+   ========================================================= */
+
+/* Blog main page background wrapper */
+body:has(a[href*="/blog/"]) .blog-container,
+body:has(a[href*="/blog/"]) .blog-page,
+body:has(a[href*="/blog/"]) .blog-content,
+body:has(a[href*="/blog/"]) .blog-details,
+body:has(a[href*="/blog/"]) .blog-list,
+body:has(a[href*="/blogs/"]) .blog-container,
+body:has(a[href*="/blogs/"]) .blog-page,
+body:has(a[href*="/blogs/"]) .blog-content,
+body:has(a[href*="/blogs/"]) .blog-details,
+body:has(a[href*="/blogs/"]) .blog-list {
+    background: rgba(8, 40, 79, 0.68) !important;
+    border: 1px solid rgba(72, 198, 255, 0.24) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.26) !important;
+    color: #ffffff !important;
+}
+
+/* Blog list big dark panel by common inline/Tailwind background */
+body:has(a[href*="/blog/"]) div[class*="bg-[#1a1b28]"],
+body:has(a[href*="/blogs/"]) div[class*="bg-[#1a1b28]"],
+body:has(a[href*="/blog/"]) div[class*="bg-[#1A1B28]"],
+body:has(a[href*="/blogs/"]) div[class*="bg-[#1A1B28]"] {
+    background: rgba(8, 40, 79, 0.68) !important;
+    border: 1px solid rgba(72, 198, 255, 0.24) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.26) !important;
+}
+
+/* Blog item rows */
+body:has(a[href*="/blog/"]) .blog-list > div,
+body:has(a[href*="/blogs/"]) .blog-list > div,
+body:has(a[href*="/blog/"]) .blog-post,
+body:has(a[href*="/blogs/"]) .blog-post {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Blog images stay visible */
+body:has(a[href*="/blog/"]) img,
+body:has(a[href*="/blogs/"]) img {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Blog thumbnails */
+body:has(a[href*="/blog/"]) a img,
+body:has(a[href*="/blogs/"]) a img,
+body:has(a[href*="/blog/"]) .blog-list img,
+body:has(a[href*="/blogs/"]) .blog-list img,
+body:has(a[href*="/blog/"]) .blog-post img,
+body:has(a[href*="/blogs/"]) .blog-post img {
+    display: block !important;
+    border-radius: 14px !important;
+    object-fit: cover !important;
+    background: transparent !important;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* Single blog main image */
+body:has(a[href*="/blog/"]) article img,
+body:has(a[href*="/blogs/"]) article img,
+body:has(a[href*="/blog/"]) .blog-content img,
+body:has(a[href*="/blogs/"]) .blog-content img,
+body:has(a[href*="/blog/"]) .blog-details img,
+body:has(a[href*="/blogs/"]) .blog-details img {
+    max-width: 100% !important;
+    height: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border-radius: 16px !important;
+}
+
+/* Blog titles */
+body:has(a[href*="/blog/"]) h1,
+body:has(a[href*="/blog/"]) h2,
+body:has(a[href*="/blog/"]) h3,
+body:has(a[href*="/blogs/"]) h1,
+body:has(a[href*="/blogs/"]) h2,
+body:has(a[href*="/blogs/"]) h3 {
+    color: #ffffff !important;
+}
+
+/* Blog list title links */
+body:has(a[href*="/blog/"]) h1 a,
+body:has(a[href*="/blog/"]) h2 a,
+body:has(a[href*="/blog/"]) h3 a,
+body:has(a[href*="/blogs/"]) h1 a,
+body:has(a[href*="/blogs/"]) h2 a,
+body:has(a[href*="/blogs/"]) h3 a {
+    color: #ffffff !important;
+}
+
+/* Blog text */
+body:has(a[href*="/blog/"]) p,
+body:has(a[href*="/blogs/"]) p,
+body:has(a[href*="/blog/"]) .blog-content,
+body:has(a[href*="/blogs/"]) .blog-content,
+body:has(a[href*="/blog/"]) .blog-details,
+body:has(a[href*="/blogs/"]) .blog-details {
+    color: #ffffff !important;
+}
+
+/* Posted date */
+body:has(a[href*="/blog/"]) small,
+body:has(a[href*="/blogs/"]) small,
+body:has(a[href*="/blog/"]) time,
+body:has(a[href*="/blogs/"]) time {
+    color: #d8f4ff !important;
+}
+
+/* Read more links */
+body:has(a[href*="/blog/"]) a,
+body:has(a[href*="/blogs/"]) a {
+    color: #8ee7ff !important;
+}
+
+body:has(a[href*="/blog/"]) a:hover,
+body:has(a[href*="/blogs/"]) a:hover {
+    color: #48c6ff !important;
+}
+
+/* Keep sidebar menu untouched */
+#sidebar-menu a,
+#sidebar-menu a:hover {
+    color: #ffffff !important;
+}
+
+/* Fix blog top spacing */
+body:has(a[href*="/blog/"]) main,
+body:has(a[href*="/blogs/"]) main,
+body:has(a[href*="/blog/"]) main > div,
+body:has(a[href*="/blogs/"]) main > div,
+body:has(a[href*="/blog/"]) .wrapper,
+body:has(a[href*="/blogs/"]) .wrapper,
+body:has(a[href*="/blog/"]) .content-container,
+body:has(a[href*="/blogs/"]) .content-container {
+    margin-top: 0 !important;
+    padding-top: 20px !important;
+}
+
+/* Single blog article panel */
+body:has(a[href*="/blog/"]) article,
+body:has(a[href*="/blogs/"]) article {
+    background: rgba(8, 40, 79, 0.68) !important;
+    border: 1px solid rgba(72, 198, 255, 0.24) !important;
+    border-radius: 20px !important;
+    padding: 28px !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.26) !important;
+}
+
+/* Prevent empty blue boxes from covering thumbnails */
+body:has(a[href*="/blog/"]) img[src],
+body:has(a[href*="/blogs/"]) img[src] {
+    background: transparent !important;
+}
+
+/* Force blue background on /blogs main box */
+body div:has(> h1):has(a[href*="/blog"]),
+body div:has(> h1):has(a[href*="/blogs"]) {
+    background: linear-gradient(180deg, rgba(8, 55, 105, 0.88) 0%, rgba(7, 38, 78, 0.92) 100%) !important;
+    border: 1px solid rgba(72, 198, 255, 0.32) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28), 0 0 28px rgba(72, 198, 255, 0.12) !important;
+}
+
+/* Keep blog rows clean, no extra boxes */
+body div:has(> h1):has(a[href*="/blog"]) > div,
+body div:has(> h1):has(a[href*="/blogs"]) > div {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Blog image preview */
+body div:has(> h1):has(a[href*="/blog"]) img,
+body div:has(> h1):has(a[href*="/blogs"]) img {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    border-radius: 14px !important;
+    object-fit: cover !important;
+}
+
+/* Blog titles/text */
+body div:has(> h1):has(a[href*="/blog"]) h1,
+body div:has(> h1):has(a[href*="/blog"]) h2,
+body div:has(> h1):has(a[href*="/blog"]) h3,
+body div:has(> h1):has(a[href*="/blog"]) p,
+body div:has(> h1):has(a[href*="/blogs"]) h1,
+body div:has(> h1):has(a[href*="/blogs"]) h2,
+body div:has(> h1):has(a[href*="/blogs"]) h3,
+body div:has(> h1):has(a[href*="/blogs"]) p {
+    color: #ffffff !important;
+}
+
+/* Blog title links */
+body div:has(> h1):has(a[href*="/blog"]) a,
+body div:has(> h1):has(a[href*="/blogs"]) a {
+    color: #8ee7ff !important;
+}
+
+body div:has(> h1):has(a[href*="/blog"]) a:hover,
+body div:has(> h1):has(a[href*="/blogs"]) a:hover {
+    color: #48c6ff !important;
+}
+
+/* Single blog page dark panel to blue arcade style */
+html:has(link[rel="canonical"][href*="/blog/"]) body .bg-\[\#1F1F30\],
+html:has(link[rel="canonical"][href*="/blog/"]) body .bg-\[\#1f1f30\],
+html:has(link[rel="canonical"][href*="/blog/"]) body .bg-\[\#1a1b28\],
+html:has(link[rel="canonical"][href*="/blog/"]) body .bg-\[\#1A1B28\],
+html:has(link[rel="canonical"][href*="/blog/"]) body .bg-\[\#212233\],
+html:has(link[rel="canonical"][href*="/blog/"]) body .bg-\[\#181925\] {
+    background: linear-gradient(180deg, rgba(8, 55, 105, 0.90) 0%, rgba(7, 38, 78, 0.96) 100%) !important;
+    border: 1px solid rgba(72, 198, 255, 0.28) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28), 0 0 28px rgba(72, 198, 255, 0.12) !important;
+}
+
+/* Single blog text */
+html:has(link[rel="canonical"][href*="/blog/"]) body h1,
+html:has(link[rel="canonical"][href*="/blog/"]) body h2,
+html:has(link[rel="canonical"][href*="/blog/"]) body h3,
+html:has(link[rel="canonical"][href*="/blog/"]) body p,
+html:has(link[rel="canonical"][href*="/blog/"]) body time,
+html:has(link[rel="canonical"][href*="/blog/"]) body small {
+    color: #ffffff !important;
+}
+
+/* Single blog image */
+html:has(link[rel="canonical"][href*="/blog/"]) body img {
+    border-radius: 16px !important;
+}
+
+/* Homepage description box blue style */
+body .p-5.text-white.bg-\[\#212233\],
+body div[class*="p-5"][class*="bg-[#212233]"],
+body div[class*="lg:w-[464px]"][class*="bg-[#212233]"] {
+    background: linear-gradient(180deg, rgba(8, 55, 105, 0.90) 0%, rgba(7, 38, 78, 0.96) 100%) !important;
+    border: 1px solid rgba(72, 198, 255, 0.28) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28), 0 0 24px rgba(72, 198, 255, 0.12) !important;
+}
+
+/* Homepage description text */
+body .p-5.text-white.bg-\[\#212233\] h1,
+body .p-5.text-white.bg-\[\#212233\] h2,
+body .p-5.text-white.bg-\[\#212233\] h3,
+body .p-5.text-white.bg-\[\#212233\] p,
+body div[class*="lg:w-[464px]"][class*="bg-[#212233]"] h1,
+body div[class*="lg:w-[464px]"][class*="bg-[#212233]"] p {
+    color: #ffffff !important;
+}
+
+/* Learn more link */
+body .p-5.text-white.bg-\[\#212233\] a,
+body div[class*="lg:w-[464px]"][class*="bg-[#212233]"] a {
+    color: #8ee7ff !important;
+    font-weight: 800 !important;
+}
+
+body .p-5.text-white.bg-\[\#212233\] a:hover,
+body div[class*="lg:w-[464px]"][class*="bg-[#212233]"] a:hover {
+    color: #48c6ff !important;
+}

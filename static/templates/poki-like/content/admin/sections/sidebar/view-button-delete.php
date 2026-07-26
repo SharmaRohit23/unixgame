@@ -1,0 +1,1 @@
+<button id="mc-sidebar-delete" class="mc_d-{{VIEW_SIDEBAR_ID}} btn-p btn-small btn-p3 fa fa-trash" data-sidebar="{{VIEW_SIDEBAR_ID}}"></button>

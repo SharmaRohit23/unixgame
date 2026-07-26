@@ -1,0 +1,1 @@
+{{TAGS_HOME_CARD_HTML}}
