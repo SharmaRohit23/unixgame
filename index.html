@@ -3,28 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UXO GAMES — Standing By</title>
+<title>UXO GAMES — Terminal Online</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --charcoal:#121316;
-    --charcoal-2:#191b1f;
-    --steel:#8b929a;
-    --steel-dim:#4d525a;
-    --hazard:#ff7a1a;
-    --hazard-yellow:#ffc328;
-    --alert:#ff3d3d;
-    --paper:#f3f1ea;
+    --void:#04050a;
+    --void-2:#080b14;
+    --panel:rgba(12,18,32,0.55);
+    --cyan:#37e6ff;
+    --cyan-dim:#1a5a66;
+    --violet:#a35bff;
+    --steel:#9fb2c4;
+    --steel-dim:#4c5a6b;
+    --paper:#eaf6ff;
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
-
   html,body{height:100%;}
 
   body{
-    background:var(--charcoal);
+    background:var(--void);
     color:var(--steel);
     font-family:'IBM Plex Mono', monospace;
     min-height:100vh;
@@ -36,161 +36,199 @@
     padding:28px;
   }
 
-  /* hazard stripe bars top & bottom */
-  .hazard-bar{
-    position:fixed;
-    left:0; right:0;
-    height:10px;
-    background:repeating-linear-gradient(
-      -45deg,
-      var(--hazard-yellow) 0 18px,
-      var(--charcoal-2) 18px 36px
-    );
-    z-index:20;
-  }
-  .hazard-bar.top{top:0;}
-  .hazard-bar.bottom{bottom:0;}
-
-  /* faint radial grid / blast radius rings behind content */
-  .rings{
+  body::before{
+    content:"";
     position:fixed;
     inset:0;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(163,91,255,0.14), transparent 55%),
+      radial-gradient(ellipse at 75% 80%, rgba(55,230,255,0.12), transparent 55%);
     z-index:0;
+  }
+
+  .grid-floor{
+    position:fixed;
+    left:0; right:0; bottom:0;
+    height:50vh;
+    background-image:
+      linear-gradient(rgba(55,230,255,0.16) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(55,230,255,0.16) 1px, transparent 1px);
+    background-size:52px 52px;
+    transform:perspective(300px) rotateX(74deg);
+    transform-origin:bottom;
+    mask-image:linear-gradient(to top, black, transparent);
+    -webkit-mask-image:linear-gradient(to top, black, transparent);
+    opacity:0.5;
+    z-index:1;
+    animation:drift 8s linear infinite;
+  }
+
+  @keyframes drift{
+    from{background-position:0 0, 0 0;}
+    to{background-position:0 52px, 52px 0;}
+  }
+
+  .scan-sweep{
+    position:fixed;
+    left:0; right:0;
+    height:120px;
+    background:linear-gradient(to bottom, transparent, rgba(55,230,255,0.06), transparent);
+    z-index:2;
     pointer-events:none;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    animation:sweep 6s ease-in-out infinite;
   }
-  .rings span{
-    position:absolute;
-    border:1px solid rgba(255,122,26,0.14);
-    border-radius:50%;
+
+  @keyframes sweep{
+    0%{ top:-120px; }
+    50%{ top:100%; }
+    100%{ top:-120px; }
   }
-  .rings span:nth-child(1){width:340px;height:340px;}
-  .rings span:nth-child(2){width:560px;height:560px;}
-  .rings span:nth-child(3){width:800px;height:800px;}
-  .rings span:nth-child(4){width:1060px;height:1060px;}
 
   .stage{
     position:relative;
     z-index:10;
     width:100%;
-    max-width:620px;
-    padding:52px 44px;
+    max-width:640px;
+    padding:56px 46px;
     text-align:center;
+    background:var(--panel);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(55,230,255,0.22);
+    box-shadow:
+      0 0 0 1px rgba(55,230,255,0.06) inset,
+      0 0 60px rgba(55,230,255,0.08);
   }
 
-  /* HUD corner brackets */
-  .stage::before,
-  .stage::after,
-  .bracket-tr,
-  .bracket-bl{
+  .stage::before,.stage::after,.br-tr,.br-bl{
     content:"";
     position:absolute;
-    width:26px;
-    height:26px;
-    border:2px solid var(--hazard);
-    opacity:0.85;
+    width:30px;
+    height:30px;
+    border:2px solid var(--cyan);
+    filter:drop-shadow(0 0 6px rgba(55,230,255,0.7));
   }
-  .stage::before{ top:0; left:0; border-right:none; border-bottom:none; }
-  .stage::after{ bottom:0; right:0; border-left:none; border-top:none; }
-  .bracket-tr{ top:0; right:0; border-left:none; border-bottom:none; }
-  .bracket-bl{ bottom:0; left:0; border-right:none; border-top:none; }
+  .stage::before{ top:-1px; left:-1px; border-right:none; border-bottom:none; }
+  .stage::after{ bottom:-1px; right:-1px; border-left:none; border-top:none; }
+  .br-tr{ top:-1px; right:-1px; border-left:none; border-bottom:none; }
+  .br-bl{ bottom:-1px; left:-1px; border-right:none; border-top:none; }
 
   .status-row{
     display:flex;
     align-items:center;
     justify-content:center;
     gap:10px;
-    font-size:12px;
-    letter-spacing:0.28em;
+    font-size:11.5px;
+    letter-spacing:0.3em;
     text-transform:uppercase;
     color:var(--steel-dim);
-    margin-bottom:30px;
+    margin-bottom:26px;
   }
 
   .status-dot{
     width:7px;height:7px;
     border-radius:50%;
-    background:var(--hazard-yellow);
-    box-shadow:0 0 8px var(--hazard-yellow);
+    background:var(--cyan);
+    box-shadow:0 0 10px var(--cyan);
     animation:pulse 1.6s ease-in-out infinite;
   }
 
   @keyframes pulse{
     0%,100%{opacity:1;}
-    50%{opacity:0.25;}
+    50%{opacity:0.2;}
+  }
+
+  .core{
+    position:relative;
+    width:190px;
+    height:190px;
+    margin:0 auto 8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .core .ring{
+    position:absolute;
+    border-radius:50%;
+    border:1px solid rgba(55,230,255,0.35);
+  }
+  .core .ring.r1{ width:100%; height:100%; border-style:dashed; animation:spin 18s linear infinite; }
+  .core .ring.r2{ width:76%; height:76%; border-color:rgba(163,91,255,0.4); animation:spin 12s linear infinite reverse; }
+  .core .ring.r3{ width:54%; height:54%; border-color:rgba(55,230,255,0.55); animation:spin 24s linear infinite; }
+
+  @keyframes spin{
+    from{ transform:rotate(0deg); }
+    to{ transform:rotate(360deg); }
+  }
+
+  .core .glyph{
+    font-family:'Orbitron', sans-serif;
+    font-weight:800;
+    font-size:15px;
+    letter-spacing:0.1em;
+    color:var(--cyan);
+    text-shadow:0 0 12px rgba(55,230,255,0.8);
   }
 
   .brand{
-    font-family:'Rajdhani', sans-serif;
-    font-weight:700;
-    font-size:clamp(2.8rem, 10vw, 5.2rem);
-    letter-spacing:0.03em;
-    line-height:0.92;
+    font-family:'Orbitron', sans-serif;
+    font-weight:800;
+    font-size:clamp(2.2rem, 8vw, 3.6rem);
+    letter-spacing:0.06em;
+    line-height:1.1;
     color:var(--paper);
     text-transform:uppercase;
+    text-shadow:0 0 18px rgba(55,230,255,0.35);
+    margin-top:6px;
   }
 
   .brand .uxo{
-    color:var(--hazard);
-    position:relative;
-  }
-
-  .divider{
-    width:120px;
-    height:4px;
-    margin:20px auto 22px;
-    background:repeating-linear-gradient(
-      -45deg,
-      var(--hazard-yellow) 0 8px,
-      var(--charcoal-2) 8px 16px
-    );
+    background:linear-gradient(90deg, var(--cyan), var(--violet));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
   }
 
   .tagline{
     font-family:'Rajdhani', sans-serif;
     font-size:17px;
     font-weight:500;
-    letter-spacing:0.03em;
+    letter-spacing:0.02em;
     color:var(--steel);
-    max-width:420px;
-    margin:0 auto;
-    line-height:1.55;
+    max-width:440px;
+    margin:18px auto 0;
+    line-height:1.6;
   }
 
   .telemetry{
     display:flex;
     justify-content:center;
-    gap:28px;
+    gap:30px;
     margin-top:34px;
     padding-top:22px;
-    border-top:1px solid #2a2d32;
+    border-top:1px solid rgba(55,230,255,0.16);
     flex-wrap:wrap;
   }
 
-  .telemetry .stat{
-    text-align:left;
-    min-width:100px;
-  }
+  .telemetry .stat{ text-align:left; min-width:96px; }
 
   .telemetry .stat .label{
     font-size:10px;
-    letter-spacing:0.2em;
+    letter-spacing:0.22em;
     color:var(--steel-dim);
     text-transform:uppercase;
   }
 
   .telemetry .stat .value{
-    font-size:15px;
-    color:var(--hazard-yellow);
+    font-family:'Rajdhani', sans-serif;
+    font-size:16px;
+    font-weight:600;
+    color:var(--cyan);
     margin-top:4px;
-    font-weight:500;
   }
 
-  /* the arm / play control */
   .arm-wrap{
-    margin-top:40px;
+    margin-top:42px;
     position:relative;
     display:inline-block;
   }
@@ -201,23 +239,23 @@
     font-family:'Rajdhani', sans-serif;
     font-weight:700;
     font-size:19px;
-    letter-spacing:0.18em;
+    letter-spacing:0.2em;
     text-transform:uppercase;
-    color:var(--charcoal);
-    background:var(--hazard);
+    color:var(--void);
+    background:linear-gradient(90deg, var(--cyan), #6fd8ff);
     border:none;
-    padding:18px 54px;
+    padding:18px 56px;
     cursor:pointer;
     clip-path:polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
     overflow:hidden;
-    transition:transform 0.15s ease, box-shadow 0.2s ease, color 0.2s ease;
-    box-shadow:0 0 0 rgba(255,122,26,0);
+    transition:transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow:0 0 24px rgba(55,230,255,0.35);
   }
 
   .play-btn .fill{
     position:absolute;
     inset:0;
-    background:var(--hazard-yellow);
+    background:linear-gradient(90deg, var(--violet), #ff6fd8);
     transform:translateX(-100%);
     z-index:-1;
   }
@@ -231,13 +269,11 @@
   }
 
   .play-btn:hover{
-    box-shadow:0 0 26px rgba(255,122,26,0.5);
+    box-shadow:0 0 42px rgba(55,230,255,0.6);
     transform:translateY(-2px);
   }
 
-  .play-btn:active{
-    transform:translateY(0);
-  }
+  .play-btn:active{ transform:translateY(0); }
 
   .play-btn:focus-visible{
     outline:3px solid var(--paper);
@@ -253,51 +289,55 @@
     min-height:16px;
   }
 
-  .btn-caption.warn{
-    color:var(--hazard-yellow);
-  }
+  .btn-caption.warn{ color:var(--violet); }
 
   footer{
-    margin-top:30px;
+    margin-top:32px;
     font-size:10.5px;
-    letter-spacing:0.18em;
+    letter-spacing:0.2em;
     color:var(--steel-dim);
     text-transform:uppercase;
   }
 
   @media (prefers-reduced-motion: reduce){
-    .status-dot, .play-btn.arming .fill{ animation:none !important; }
+    .grid-floor, .scan-sweep, .status-dot, .core .ring, .play-btn.arming .fill{
+      animation:none !important;
+    }
   }
 
   @media (max-width:480px){
     .stage{ padding:44px 22px; }
-    .play-btn{ padding:16px 38px; font-size:16px; }
+    .play-btn{ padding:16px 40px; font-size:16px; }
     .telemetry{ gap:20px; }
+    .core{ width:150px; height:150px; }
   }
 </style>
 </head>
 <body>
 
-  <div class="hazard-bar top"></div>
-  <div class="hazard-bar bottom"></div>
-
-  <div class="rings" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="grid-floor"></div>
+  <div class="scan-sweep"></div>
 
   <main class="stage">
-    <div class="bracket-tr"></div>
-    <div class="bracket-bl"></div>
+    <div class="br-tr"></div>
+    <div class="br-bl"></div>
 
     <div class="status-row">
-      <span class="status-dot"></span> Standing By
+      <span class="status-dot"></span> Terminal Online
+    </div>
+
+    <div class="core" aria-hidden="true">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="ring r3"></div>
+      <span class="glyph">UXO</span>
     </div>
 
     <h1 class="brand"><span class="uxo">UXO</span> GAMES</h1>
 
-    <div class="divider"></div>
-
     <p class="tagline">
-      High-impact play, precision-built. Every session lands where it counts.
-      Arm the launcher below to enter the main site.
+      Precision play from another orbit. Sync the terminal below to enter
+      the main network.
     </p>
 
     <div class="telemetry">
@@ -321,9 +361,9 @@
         <span class="label-text">Play Now</span>
       </button>
     </div>
-    <p class="btn-caption" id="caption">Click to arm and launch session</p>
+    <p class="btn-caption" id="caption">Click to sync and launch session</p>
 
-    <footer>© UXO GAMES — All Systems Nominal</footer>
+    <footer>© UXO GAMES — Signal Locked</footer>
   </main>
 
 <script>
@@ -340,9 +380,9 @@
   btn.addEventListener('click', function () {
     if (btn.classList.contains('arming')) return;
     btn.classList.add('arming');
-    caption.textContent = 'Arming session...';
+    caption.textContent = 'Syncing terminal...';
     caption.classList.add('warn');
-    statStatus.textContent = 'Armed';
+    statStatus.textContent = 'Synced';
     btn.disabled = true;
 
     setTimeout(function () {
